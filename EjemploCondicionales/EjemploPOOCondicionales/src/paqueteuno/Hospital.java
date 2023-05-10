@@ -1,13 +1,6 @@
-/*
- * características: nombre del hospital, ciudad del hospital, 
- *   número de camas, número de doctores, presupuesto anual.
- */
+
 package paqueteuno;
 
-/**
- *
- * @author reroes
- */
 public class Hospital {
     
     private String nombreHospital;
@@ -18,38 +11,35 @@ public class Hospital {
     
     // constructores 
     // Objetos para opción 1
-    public Hospital(String nombre, int camas, int doctores, double presupueto){
-        nombreHospital = nombre;
-        numeroCamas = camas;
-        numeroDoctores = doctores;
-        presupuestoAnual = presupueto;
-        // para este tipo de hospitales la ciudad por defecto será Quito
-        ciudadHospital = "Quito";
-    }
     
-    // Objetos para opción 2
-    public Hospital(String nombre, int camas, int doctores){
-        nombreHospital = nombre;
-        numeroCamas = camas;
-        numeroDoctores = doctores;
-        
-        // para este tipo de hospitales la ciudad por defecto será Quito
-        ciudadHospital = "Quito";
-        // presupuesto anual será de 250 mil dolares con 10 centavos
-        presupuestoAnual = 250000.10;
-    }
-    
-    // Objetos para opción 3
-    public Hospital(String nombre, String ciudad, int camas, int doctores, 
-            double presupueto){
-        nombreHospital = nombre;
-        numeroCamas = camas;
-        numeroDoctores = doctores;
-        ciudadHospital = ciudad;
-        presupuestoAnual = presupueto;
-    }
     // métodos establecer para asignar valores a 
     // cada atributo
+
+    public Hospital(String nombreHospital, int numeroCamas, int numeroDoctores, double presupuestoAnual) {
+        this.nombreHospital = nombreHospital;
+        this.numeroCamas = numeroCamas;
+        this.numeroDoctores = numeroDoctores;
+        this.presupuestoAnual = presupuestoAnual;
+        this.ciudadHospital = "UIO";
+    }
+
+    public Hospital(String nombreHospital, int numeroCamas, int numeroDoctores) {
+        this.nombreHospital = nombreHospital;
+        this.numeroCamas = numeroCamas;
+        this.numeroDoctores = numeroDoctores;
+        this.ciudadHospital = "UIO";
+        this.presupuestoAnual = 100000.5;
+    }
+
+    public Hospital(String nombreHospital, String ciudadHospital, int numeroCamas, int numeroDoctores, double presupuestoAnual) {
+        this.nombreHospital = nombreHospital;
+        this.ciudadHospital = ciudadHospital;
+        this.numeroCamas = numeroCamas;
+        this.numeroDoctores = numeroDoctores;
+        this.presupuestoAnual = presupuestoAnual;
+    }
+    
+    
     public void establecerNombreHospital(String n){
         nombreHospital = n;
     }
@@ -91,6 +81,11 @@ public class Hospital {
     
     public double obtenerPresupuestoAnual(){
         return presupuestoAnual;
+    }
+
+    @Override
+    public String toString() {
+        return "Hospital{" + "nombreHospital=" + nombreHospital + ", ciudadHospital=" + ciudadHospital + ", numeroCamas=" + numeroCamas + ", numeroDoctores=" + numeroDoctores + ", presupuestoAnual=" + presupuestoAnual + '}';
     }
     
     
